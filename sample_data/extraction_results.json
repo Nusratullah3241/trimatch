@@ -1,0 +1,702 @@
+[
+  {
+    "file": "purchase_orders/PO-2026-1000.pdf",
+    "doc_type": "PO",
+    "set_id": 0,
+    "vendor": "Zenith Computer Traders",
+    "extracted_number": "PO-2026-1000",
+    "line_count": 4,
+    "confidence": 1.0,
+    "ms": 1
+  },
+  {
+    "file": "grns/GRN-2026-5000.pdf",
+    "doc_type": "GRN",
+    "set_id": 0,
+    "vendor": "Zenith Computer Traders",
+    "extracted_number": "GRN-2026-5000",
+    "line_count": 4,
+    "confidence": 1.0,
+    "ms": 0
+  },
+  {
+    "file": "invoices/INV-ZEN-9000.pdf",
+    "doc_type": "INVOICE",
+    "set_id": 0,
+    "vendor": "Zenith Computer Traders",
+    "extracted_number": "INV-ZEN-9000",
+    "line_count": 4,
+    "confidence": 1.0,
+    "ms": 0
+  },
+  {
+    "file": "purchase_orders/PO-2026-1001.pdf",
+    "doc_type": "PO",
+    "set_id": 1,
+    "vendor": "Falcon Office Supplies (Pvt) Ltd",
+    "extracted_number": "PO-2026-1001",
+    "line_count": 4,
+    "confidence": 1.0,
+    "ms": 0
+  },
+  {
+    "file": "grns/GRN-2026-5001.pdf",
+    "doc_type": "GRN",
+    "set_id": 1,
+    "vendor": "Falcon Office Supplies (Pvt) Ltd",
+    "extracted_number": "GRN-2026-5001",
+    "line_count": 4,
+    "confidence": 1.0,
+    "ms": 0
+  },
+  {
+    "file": "invoices/INV-FAL-9001.pdf",
+    "doc_type": "INVOICE",
+    "set_id": 1,
+    "vendor": "Falcon Office Supplies (Pvt) Ltd",
+    "extracted_number": "INV-FAL-9001",
+    "line_count": 4,
+    "confidence": 1.0,
+    "ms": 0
+  },
+  {
+    "file": "purchase_orders/PO-2026-1002.pdf",
+    "doc_type": "PO",
+    "set_id": 2,
+    "vendor": "Meridian Tech Distribution",
+    "extracted_number": "PO-2026-1002",
+    "line_count": 3,
+    "confidence": 1.0,
+    "ms": 0
+  },
+  {
+    "file": "grns/GRN-2026-5002.pdf",
+    "doc_type": "GRN",
+    "set_id": 2,
+    "vendor": "Meridian Tech Distribution",
+    "extracted_number": "GRN-2026-5002",
+    "line_count": 3,
+    "confidence": 0.95,
+    "ms": 9
+  },
+  {
+    "file": "invoices/INV-MER-9002.pdf",
+    "doc_type": "INVOICE",
+    "set_id": 2,
+    "vendor": "Meridian Tech Distribution",
+    "extracted_number": "INV-MER-9002",
+    "line_count": 3,
+    "confidence": 1.0,
+    "ms": 0
+  },
+  {
+    "file": "purchase_orders/PO-2026-1003.pdf",
+    "doc_type": "PO",
+    "set_id": 3,
+    "vendor": "Apex Industrial Equipment",
+    "extracted_number": "PO-2026-1003",
+    "line_count": 4,
+    "confidence": 1.0,
+    "ms": 11
+  },
+  {
+    "file": "grns/GRN-2026-5003.pdf",
+    "doc_type": "GRN",
+    "set_id": 3,
+    "vendor": "Apex Industrial Equipment",
+    "extracted_number": "GRN-2026-5003",
+    "line_count": 4,
+    "confidence": 1.0,
+    "ms": 20
+  },
+  {
+    "file": "invoices/INV-APE-9003.pdf",
+    "doc_type": "INVOICE",
+    "set_id": 3,
+    "vendor": "Apex Industrial Equipment",
+    "extracted_number": "INV-APE-9003",
+    "line_count": 4,
+    "confidence": 1.0,
+    "ms": 11
+  },
+  {
+    "file": "purchase_orders/PO-2026-1004.pdf",
+    "doc_type": "PO",
+    "set_id": 4,
+    "vendor": "Zenith Computer Traders",
+    "extracted_number": "PO-2026-1004",
+    "line_count": 3,
+    "confidence": 0.95,
+    "ms": 32
+  },
+  {
+    "file": "grns/GRN-2026-5004.pdf",
+    "doc_type": "GRN",
+    "set_id": 4,
+    "vendor": "Zenith Computer Traders",
+    "extracted_number": "GRN-2026-5004",
+    "line_count": 3,
+    "confidence": 1.0,
+    "ms": 9
+  },
+  {
+    "file": "invoices/INV-ZEN-9004.pdf",
+    "doc_type": "INVOICE",
+    "set_id": 4,
+    "vendor": "Zenith Computer Traders",
+    "extracted_number": "INV-ZEN-9004",
+    "line_count": 3,
+    "confidence": 1.0,
+    "ms": 10
+  },
+  {
+    "file": "purchase_orders/PO-2026-1005.pdf",
+    "doc_type": "PO",
+    "set_id": 5,
+    "vendor": "Falcon Office Supplies (Pvt) Ltd",
+    "extracted_number": "PO-2026-1005",
+    "line_count": 3,
+    "confidence": 1.0,
+    "ms": 14
+  },
+  {
+    "file": "grns/GRN-2026-5005.pdf",
+    "doc_type": "GRN",
+    "set_id": 5,
+    "vendor": "Falcon Office Supplies (Pvt) Ltd",
+    "extracted_number": "GRN-2026-5005",
+    "line_count": 3,
+    "confidence": 0.95,
+    "ms": 15
+  },
+  {
+    "file": "invoices/INV-FAL-9005.pdf",
+    "doc_type": "INVOICE",
+    "set_id": 5,
+    "vendor": "Falcon Office Supplies (Pvt) Ltd",
+    "extracted_number": "INV-FAL-9005",
+    "line_count": 3,
+    "confidence": 1.0,
+    "ms": 15
+  },
+  {
+    "file": "purchase_orders/PO-2026-1006.pdf",
+    "doc_type": "PO",
+    "set_id": 6,
+    "vendor": "Meridian Tech Distribution",
+    "extracted_number": "PO-2026-1006",
+    "line_count": 3,
+    "confidence": 1.0,
+    "ms": 16
+  },
+  {
+    "file": "grns/GRN-2026-5006.pdf",
+    "doc_type": "GRN",
+    "set_id": 6,
+    "vendor": "Meridian Tech Distribution",
+    "extracted_number": "GRN-2026-5006",
+    "line_count": 4,
+    "confidence": 1.0,
+    "ms": 0
+  },
+  {
+    "file": "invoices/INV-MER-9006.pdf",
+    "doc_type": "INVOICE",
+    "set_id": 6,
+    "vendor": "Meridian Tech Distribution",
+    "extracted_number": "INV-MER-9006",
+    "line_count": 4,
+    "confidence": 1.0,
+    "ms": 16
+  },
+  {
+    "file": "purchase_orders/PO-2026-1007.pdf",
+    "doc_type": "PO",
+    "set_id": 7,
+    "vendor": "Apex Industrial Equipment",
+    "extracted_number": "PO-2026-1007",
+    "line_count": 4,
+    "confidence": 0.95,
+    "ms": 9
+  },
+  {
+    "file": "grns/GRN-2026-5007.pdf",
+    "doc_type": "GRN",
+    "set_id": 7,
+    "vendor": "Apex Industrial Equipment",
+    "extracted_number": "GRN-2026-5007",
+    "line_count": 4,
+    "confidence": 1.0,
+    "ms": 6
+  },
+  {
+    "file": "invoices/INV-APE-9007.pdf",
+    "doc_type": "INVOICE",
+    "set_id": 7,
+    "vendor": "Apex Industrial Equipment",
+    "extracted_number": "INV-APE-9007",
+    "line_count": 4,
+    "confidence": 1.0,
+    "ms": 3
+  },
+  {
+    "file": "purchase_orders/PO-2026-1008.pdf",
+    "doc_type": "PO",
+    "set_id": 8,
+    "vendor": "Zenith Computer Traders",
+    "extracted_number": "PO-2026-1008",
+    "line_count": 2,
+    "confidence": 1.0,
+    "ms": 0
+  },
+  {
+    "file": "grns/GRN-2026-5008.pdf",
+    "doc_type": "GRN",
+    "set_id": 8,
+    "vendor": "Zenith Computer Traders",
+    "extracted_number": "GRN-2026-5008",
+    "line_count": 2,
+    "confidence": 0.98,
+    "ms": 0
+  },
+  {
+    "file": "invoices/INV-ZEN-9008.pdf",
+    "doc_type": "INVOICE",
+    "set_id": 8,
+    "vendor": "Zenith Computer Traders",
+    "extracted_number": "INV-ZEN-9008",
+    "line_count": 2,
+    "confidence": 1.0,
+    "ms": 0
+  },
+  {
+    "file": "purchase_orders/PO-2026-1009.pdf",
+    "doc_type": "PO",
+    "set_id": 9,
+    "vendor": "Falcon Office Supplies (Pvt) Ltd",
+    "extracted_number": "PO-2026-1009",
+    "line_count": 3,
+    "confidence": 1.0,
+    "ms": 0
+  },
+  {
+    "file": "grns/GRN-2026-5009.pdf",
+    "doc_type": "GRN",
+    "set_id": 9,
+    "vendor": "Falcon Office Supplies (Pvt) Ltd",
+    "extracted_number": "GRN-2026-5009",
+    "line_count": 4,
+    "confidence": 1.0,
+    "ms": 0
+  },
+  {
+    "file": "invoices/INV-FAL-9009.pdf",
+    "doc_type": "INVOICE",
+    "set_id": 9,
+    "vendor": "Falcon Office Supplies (Pvt) Ltd",
+    "extracted_number": "INV-FAL-9009",
+    "line_count": 4,
+    "confidence": 1.0,
+    "ms": 0
+  },
+  {
+    "file": "purchase_orders/PO-2026-1010.pdf",
+    "doc_type": "PO",
+    "set_id": 10,
+    "vendor": "Meridian Tech Distribution",
+    "extracted_number": "PO-2026-1010",
+    "line_count": 4,
+    "confidence": 1.0,
+    "ms": 16
+  },
+  {
+    "file": "grns/GRN-2026-5010.pdf",
+    "doc_type": "GRN",
+    "set_id": 10,
+    "vendor": "Meridian Tech Distribution",
+    "extracted_number": "GRN-2026-5010",
+    "line_count": 4,
+    "confidence": 1.0,
+    "ms": 0
+  },
+  {
+    "file": "invoices/INV-MER-9010.pdf",
+    "doc_type": "INVOICE",
+    "set_id": 10,
+    "vendor": "Meridian Tech Distribution",
+    "extracted_number": "INV-MER-9010",
+    "line_count": 4,
+    "confidence": 1.0,
+    "ms": 22
+  },
+  {
+    "file": "purchase_orders/PO-2026-1011.pdf",
+    "doc_type": "PO",
+    "set_id": 11,
+    "vendor": "Apex Industrial Equipment",
+    "extracted_number": "PO-2026-1011",
+    "line_count": 4,
+    "confidence": 1.0,
+    "ms": 12
+  },
+  {
+    "file": "grns/GRN-2026-5011.pdf",
+    "doc_type": "GRN",
+    "set_id": 11,
+    "vendor": "Apex Industrial Equipment",
+    "extracted_number": "GRN-2026-5011",
+    "line_count": 4,
+    "confidence": 1.0,
+    "ms": 2394
+  },
+  {
+    "file": "invoices/INV-APE-9011.pdf",
+    "doc_type": "INVOICE",
+    "set_id": 11,
+    "vendor": "Apex Industrial Equipment",
+    "extracted_number": "INV-APE-9011",
+    "line_count": 4,
+    "confidence": 1.0,
+    "ms": 4
+  },
+  {
+    "file": "purchase_orders/PO-2026-1012.pdf",
+    "doc_type": "PO",
+    "set_id": 12,
+    "vendor": "Zenith Computer Traders",
+    "extracted_number": "PO-2026-1012",
+    "line_count": 4,
+    "confidence": 1.0,
+    "ms": 9
+  },
+  {
+    "file": "grns/GRN-2026-5012.pdf",
+    "doc_type": "GRN",
+    "set_id": 12,
+    "vendor": "Zenith Computer Traders",
+    "extracted_number": "GRN-2026-5012",
+    "line_count": 4,
+    "confidence": 1.0,
+    "ms": 0
+  },
+  {
+    "file": "invoices/INV-ZEN-9012.pdf",
+    "doc_type": "INVOICE",
+    "set_id": 12,
+    "vendor": "Zenith Computer Traders",
+    "extracted_number": "INV-ZEN-9012",
+    "line_count": 4,
+    "confidence": 1.0,
+    "ms": 0
+  },
+  {
+    "file": "purchase_orders/PO-2026-1013.pdf",
+    "doc_type": "PO",
+    "set_id": 13,
+    "vendor": "Falcon Office Supplies (Pvt) Ltd",
+    "extracted_number": "PO-2026-1013",
+    "line_count": 2,
+    "confidence": 1.0,
+    "ms": 19
+  },
+  {
+    "file": "grns/GRN-2026-5013.pdf",
+    "doc_type": "GRN",
+    "set_id": 13,
+    "vendor": "Falcon Office Supplies (Pvt) Ltd",
+    "extracted_number": "GRN-2026-5013",
+    "line_count": 2,
+    "confidence": 1.0,
+    "ms": 1220
+  },
+  {
+    "file": "invoices/INV-FAL-9013.pdf",
+    "doc_type": "INVOICE",
+    "set_id": 13,
+    "vendor": "Falcon Office Supplies (Pvt) Ltd",
+    "extracted_number": "INV-FAL-9013",
+    "line_count": 2,
+    "confidence": 1.0,
+    "ms": 15
+  },
+  {
+    "file": "purchase_orders/PO-2026-1014.pdf",
+    "doc_type": "PO",
+    "set_id": 14,
+    "vendor": "Meridian Tech Distribution",
+    "extracted_number": "PO-2026-1014",
+    "line_count": 2,
+    "confidence": 0.95,
+    "ms": 1316
+  },
+  {
+    "file": "grns/GRN-2026-5014.pdf",
+    "doc_type": "GRN",
+    "set_id": 14,
+    "vendor": "Meridian Tech Distribution",
+    "extracted_number": "GRN-2026-5014",
+    "line_count": 2,
+    "confidence": 0.95,
+    "ms": 1279
+  },
+  {
+    "file": "invoices/INV-MER-9014.pdf",
+    "doc_type": "INVOICE",
+    "set_id": 14,
+    "vendor": "Meridian Tech Distribution",
+    "extracted_number": "INV-MER-9014",
+    "line_count": 2,
+    "confidence": 1.0,
+    "ms": 1460
+  },
+  {
+    "file": "purchase_orders/PO-2026-1015.pdf",
+    "doc_type": "PO",
+    "set_id": 15,
+    "vendor": "Apex Industrial Equipment",
+    "extracted_number": "PO-2026-1015",
+    "line_count": 2,
+    "confidence": 0.95,
+    "ms": 1276
+  },
+  {
+    "file": "grns/GRN-2026-5015.pdf",
+    "doc_type": "GRN",
+    "set_id": 15,
+    "vendor": "Apex Industrial Equipment",
+    "extracted_number": "GRN-2026-5015",
+    "line_count": 2,
+    "confidence": 0.95,
+    "ms": 1197
+  },
+  {
+    "file": "invoices/INV-APE-9015.pdf",
+    "doc_type": "INVOICE",
+    "set_id": 15,
+    "vendor": "Apex Industrial Equipment",
+    "extracted_number": "INV-APE-9015",
+    "line_count": 2,
+    "confidence": 1.0,
+    "ms": 1304
+  },
+  {
+    "file": "purchase_orders/PO-2026-1016.pdf",
+    "doc_type": "PO",
+    "set_id": 16,
+    "vendor": "Zenith Computer Traders",
+    "extracted_number": "PO-2026-1016",
+    "line_count": 3,
+    "confidence": 1.0,
+    "ms": 1464
+  },
+  {
+    "file": "grns/GRN-2026-5016.pdf",
+    "doc_type": "GRN",
+    "set_id": 16,
+    "vendor": "Zenith Computer Traders",
+    "extracted_number": "GRN-2026-5016",
+    "line_count": 3,
+    "confidence": 0.95,
+    "ms": 1419
+  },
+  {
+    "file": "invoices/INV-ZEN-9016.pdf",
+    "doc_type": "INVOICE",
+    "set_id": 16,
+    "vendor": "Zenith Computer Traders",
+    "extracted_number": "INV-ZEN-9016",
+    "line_count": 3,
+    "confidence": 1.0,
+    "ms": 1531
+  },
+  {
+    "file": "purchase_orders/PO-2026-1017.pdf",
+    "doc_type": "PO",
+    "set_id": 17,
+    "vendor": "Falcon Office Supplies (Pvt) Ltd",
+    "extracted_number": "PO-2026-1017",
+    "line_count": 4,
+    "confidence": 1.0,
+    "ms": 1628
+  },
+  {
+    "file": "grns/GRN-2026-5017.pdf",
+    "doc_type": "GRN",
+    "set_id": 17,
+    "vendor": "Falcon Office Supplies (Pvt) Ltd",
+    "extracted_number": "GRN-2026-5017",
+    "line_count": 4,
+    "confidence": 0.95,
+    "ms": 1554
+  },
+  {
+    "file": "invoices/INV-FAL-9017.pdf",
+    "doc_type": "INVOICE",
+    "set_id": 17,
+    "vendor": "Falcon Office Supplies (Pvt) Ltd",
+    "extracted_number": "INV-FAL-9017",
+    "line_count": 4,
+    "confidence": 1.0,
+    "ms": 0
+  },
+  {
+    "file": "purchase_orders/PO-2026-1018.pdf",
+    "doc_type": "PO",
+    "set_id": 18,
+    "vendor": "Meridian Tech Distribution",
+    "extracted_number": "PO-2026-1018",
+    "line_count": 2,
+    "confidence": 1.0,
+    "ms": 0
+  },
+  {
+    "file": "grns/GRN-2026-5018.pdf",
+    "doc_type": "GRN",
+    "set_id": 18,
+    "vendor": "Meridian Tech Distribution",
+    "extracted_number": "GRN-2026-5018",
+    "line_count": 2,
+    "confidence": 1.0,
+    "ms": 0
+  },
+  {
+    "file": "invoices/INV-MER-9018.pdf",
+    "doc_type": "INVOICE",
+    "set_id": 18,
+    "vendor": "Meridian Tech Distribution",
+    "extracted_number": "INV-MER-9018",
+    "line_count": 2,
+    "confidence": 1.0,
+    "ms": 0
+  },
+  {
+    "file": "purchase_orders/PO-2026-1019.pdf",
+    "doc_type": "PO",
+    "set_id": 19,
+    "vendor": "Apex Industrial Equipment",
+    "extracted_number": "PO-2026-1019",
+    "line_count": 2,
+    "confidence": 1.0,
+    "ms": 0
+  },
+  {
+    "file": "grns/GRN-2026-5019.pdf",
+    "doc_type": "GRN",
+    "set_id": 19,
+    "vendor": "Apex Industrial Equipment",
+    "extracted_number": "GRN-2026-5019",
+    "line_count": 2,
+    "confidence": 0.95,
+    "ms": 1192
+  },
+  {
+    "file": "invoices/INV-APE-9019.pdf",
+    "doc_type": "INVOICE",
+    "set_id": 19,
+    "vendor": "Apex Industrial Equipment",
+    "extracted_number": "INV-APE-9019",
+    "line_count": 2,
+    "confidence": 1.0,
+    "ms": 1325
+  },
+  {
+    "file": "purchase_orders/PO-2026-1020.pdf",
+    "doc_type": "PO",
+    "set_id": 20,
+    "vendor": "Zenith Computer Traders",
+    "extracted_number": "PO-2026-1020",
+    "line_count": 3,
+    "confidence": 0.95,
+    "ms": 1430
+  },
+  {
+    "file": "invoices/INV-ZEN-9020.pdf",
+    "doc_type": "INVOICE",
+    "set_id": 20,
+    "vendor": "Zenith Computer Traders",
+    "extracted_number": "INV-ZEN-9020",
+    "line_count": 3,
+    "confidence": 1.0,
+    "ms": 2216
+  },
+  {
+    "file": "purchase_orders/PO-2026-1021.pdf",
+    "doc_type": "PO",
+    "set_id": 21,
+    "vendor": "Falcon Office Supplies (Pvt) Ltd",
+    "extracted_number": "PO-2026-1021",
+    "line_count": 4,
+    "confidence": 1.0,
+    "ms": 1716
+  },
+  {
+    "file": "grns/GRN-2026-5021.pdf",
+    "doc_type": "GRN",
+    "set_id": 21,
+    "vendor": "Falcon Office Supplies (Pvt) Ltd",
+    "extracted_number": "GRN-2026-5021",
+    "line_count": 5,
+    "confidence": 1.0,
+    "ms": 3899
+  },
+  {
+    "file": "invoices/INV-FAL-9021.pdf",
+    "doc_type": "INVOICE",
+    "set_id": 21,
+    "vendor": "Falcon Office Supplies (Pvt) Ltd",
+    "extracted_number": "INV-FAL-9021",
+    "line_count": 5,
+    "confidence": 1.0,
+    "ms": 1949
+  },
+  {
+    "file": "purchase_orders/PO-2026-1022.pdf",
+    "doc_type": "PO",
+    "set_id": 22,
+    "vendor": "Meridian Tech Distribution",
+    "extracted_number": "PO-2026-1022",
+    "line_count": 4,
+    "confidence": 1.0,
+    "ms": 1733
+  },
+  {
+    "file": "invoices/INV-MER-9022.pdf",
+    "doc_type": "INVOICE",
+    "set_id": 22,
+    "vendor": "Meridian Tech Distribution",
+    "extracted_number": "INV-MER-9022",
+    "line_count": 4,
+    "confidence": 1.0,
+    "ms": 2556
+  },
+  {
+    "file": "purchase_orders/PO-2026-1023.pdf",
+    "doc_type": "PO",
+    "set_id": 23,
+    "vendor": "Apex Industrial Equipment",
+    "extracted_number": "PO-2026-1023",
+    "line_count": 4,
+    "confidence": 1.0,
+    "ms": 1678
+  },
+  {
+    "file": "invoices/INV-APE-9023.pdf",
+    "doc_type": "INVOICE",
+    "set_id": 23,
+    "vendor": "Apex Industrial Equipment",
+    "extracted_number": "INV-APE-9023",
+    "line_count": 4,
+    "confidence": 1.0,
+    "ms": 1984
+  },
+  {
+    "file": "purchase_orders/PO-2026-1024.pdf",
+    "doc_type": "PO",
+    "set_id": 24,
+    "vendor": "Zenith Computer Traders",
+    "extracted_number": "PO-2026-1024",
+    "line_count": 3,
+    "confidence": 1.0,
+    "ms": 1683
+  }
+]

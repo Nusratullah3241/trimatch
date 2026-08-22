@@ -13,6 +13,3 @@ backend/data/extraction_cache/
 node_modules/
 dist/
 .vercel
-sample_data/purchase_orders/*.pdf
-sample_data/grns/*.pdf
-sample_data/invoices/*.pdf

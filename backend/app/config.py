@@ -3,6 +3,7 @@ from pydantic_settings import BaseSettings
 
 class Settings(BaseSettings):
     gemini_api_key: str = ""
+    gemini_model: str = "gemini-3.6-flash"
 
     database_url: str = "sqlite:///./data/trimatch.db"
     inbox_dir: str = "./data/inbox"
