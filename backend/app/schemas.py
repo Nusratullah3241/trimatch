@@ -55,6 +55,9 @@ class MatchRunOut(BaseModel):
     total_variance: float
     processing_ms: int
     created_at: datetime
+    po_doc_id: int          # add
+    grn_doc_id: int         # add
+    invoice_doc_id: int     # add
     exceptions: list[ExceptionOut] = []
 
 
