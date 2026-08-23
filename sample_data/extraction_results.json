@@ -7,7 +7,7 @@
     "extracted_number": "PO-2026-1000",
     "line_count": 4,
     "confidence": 1.0,
-    "ms": 1
+    "ms": 9
   },
   {
     "file": "grns/GRN-2026-5000.pdf",
@@ -17,7 +17,7 @@
     "extracted_number": "GRN-2026-5000",
     "line_count": 4,
     "confidence": 1.0,
-    "ms": 0
+    "ms": 10
   },
   {
     "file": "invoices/INV-ZEN-9000.pdf",
@@ -27,7 +27,7 @@
     "extracted_number": "INV-ZEN-9000",
     "line_count": 4,
     "confidence": 1.0,
-    "ms": 0
+    "ms": 10
   },
   {
     "file": "purchase_orders/PO-2026-1001.pdf",
@@ -37,7 +37,7 @@
     "extracted_number": "PO-2026-1001",
     "line_count": 4,
     "confidence": 1.0,
-    "ms": 0
+    "ms": 6
   },
   {
     "file": "grns/GRN-2026-5001.pdf",
@@ -47,7 +47,7 @@
     "extracted_number": "GRN-2026-5001",
     "line_count": 4,
     "confidence": 1.0,
-    "ms": 0
+    "ms": 25
   },
   {
     "file": "invoices/INV-FAL-9001.pdf",
@@ -57,7 +57,7 @@
     "extracted_number": "INV-FAL-9001",
     "line_count": 4,
     "confidence": 1.0,
-    "ms": 0
+    "ms": 17
   },
   {
     "file": "purchase_orders/PO-2026-1002.pdf",
@@ -67,7 +67,7 @@
     "extracted_number": "PO-2026-1002",
     "line_count": 3,
     "confidence": 1.0,
-    "ms": 0
+    "ms": 22
   },
   {
     "file": "grns/GRN-2026-5002.pdf",
@@ -77,7 +77,7 @@
     "extracted_number": "GRN-2026-5002",
     "line_count": 3,
     "confidence": 0.95,
-    "ms": 9
+    "ms": 33
   },
   {
     "file": "invoices/INV-MER-9002.pdf",
@@ -87,7 +87,7 @@
     "extracted_number": "INV-MER-9002",
     "line_count": 3,
     "confidence": 1.0,
-    "ms": 0
+    "ms": 22
   },
   {
     "file": "purchase_orders/PO-2026-1003.pdf",
@@ -97,7 +97,7 @@
     "extracted_number": "PO-2026-1003",
     "line_count": 4,
     "confidence": 1.0,
-    "ms": 11
+    "ms": 33
   },
   {
     "file": "grns/GRN-2026-5003.pdf",
@@ -107,7 +107,7 @@
     "extracted_number": "GRN-2026-5003",
     "line_count": 4,
     "confidence": 1.0,
-    "ms": 20
+    "ms": 35
   },
   {
     "file": "invoices/INV-APE-9003.pdf",
@@ -117,7 +117,7 @@
     "extracted_number": "INV-APE-9003",
     "line_count": 4,
     "confidence": 1.0,
-    "ms": 11
+    "ms": 23
   },
   {
     "file": "purchase_orders/PO-2026-1004.pdf",
@@ -127,7 +127,7 @@
     "extracted_number": "PO-2026-1004",
     "line_count": 3,
     "confidence": 0.95,
-    "ms": 32
+    "ms": 21
   },
   {
     "file": "grns/GRN-2026-5004.pdf",
@@ -137,7 +137,7 @@
     "extracted_number": "GRN-2026-5004",
     "line_count": 3,
     "confidence": 1.0,
-    "ms": 9
+    "ms": 16
   },
   {
     "file": "invoices/INV-ZEN-9004.pdf",
@@ -147,7 +147,7 @@
     "extracted_number": "INV-ZEN-9004",
     "line_count": 3,
     "confidence": 1.0,
-    "ms": 10
+    "ms": 25
   },
   {
     "file": "purchase_orders/PO-2026-1005.pdf",
@@ -157,7 +157,7 @@
     "extracted_number": "PO-2026-1005",
     "line_count": 3,
     "confidence": 1.0,
-    "ms": 14
+    "ms": 22
   },
   {
     "file": "grns/GRN-2026-5005.pdf",
@@ -187,7 +187,7 @@
     "extracted_number": "PO-2026-1006",
     "line_count": 3,
     "confidence": 1.0,
-    "ms": 16
+    "ms": 48
   },
   {
     "file": "grns/GRN-2026-5006.pdf",
@@ -197,7 +197,7 @@
     "extracted_number": "GRN-2026-5006",
     "line_count": 4,
     "confidence": 1.0,
-    "ms": 0
+    "ms": 15
   },
   {
     "file": "invoices/INV-MER-9006.pdf",
@@ -207,7 +207,7 @@
     "extracted_number": "INV-MER-9006",
     "line_count": 4,
     "confidence": 1.0,
-    "ms": 16
+    "ms": 32
   },
   {
     "file": "purchase_orders/PO-2026-1007.pdf",
@@ -217,7 +217,7 @@
     "extracted_number": "PO-2026-1007",
     "line_count": 4,
     "confidence": 0.95,
-    "ms": 9
+    "ms": 19
   },
   {
     "file": "grns/GRN-2026-5007.pdf",
@@ -227,7 +227,7 @@
     "extracted_number": "GRN-2026-5007",
     "line_count": 4,
     "confidence": 1.0,
-    "ms": 6
+    "ms": 22
   },
   {
     "file": "invoices/INV-APE-9007.pdf",
@@ -237,7 +237,7 @@
     "extracted_number": "INV-APE-9007",
     "line_count": 4,
     "confidence": 1.0,
-    "ms": 3
+    "ms": 25
   },
   {
     "file": "purchase_orders/PO-2026-1008.pdf",
@@ -247,7 +247,7 @@
     "extracted_number": "PO-2026-1008",
     "line_count": 2,
     "confidence": 1.0,
-    "ms": 0
+    "ms": 24
   },
   {
     "file": "grns/GRN-2026-5008.pdf",
@@ -257,7 +257,7 @@
     "extracted_number": "GRN-2026-5008",
     "line_count": 2,
     "confidence": 0.98,
-    "ms": 0
+    "ms": 31
   },
   {
     "file": "invoices/INV-ZEN-9008.pdf",
@@ -267,7 +267,7 @@
     "extracted_number": "INV-ZEN-9008",
     "line_count": 2,
     "confidence": 1.0,
-    "ms": 0
+    "ms": 15
   },
   {
     "file": "purchase_orders/PO-2026-1009.pdf",
@@ -277,7 +277,7 @@
     "extracted_number": "PO-2026-1009",
     "line_count": 3,
     "confidence": 1.0,
-    "ms": 0
+    "ms": 32
   },
   {
     "file": "grns/GRN-2026-5009.pdf",
@@ -287,7 +287,7 @@
     "extracted_number": "GRN-2026-5009",
     "line_count": 4,
     "confidence": 1.0,
-    "ms": 0
+    "ms": 15
   },
   {
     "file": "invoices/INV-FAL-9009.pdf",
@@ -297,7 +297,7 @@
     "extracted_number": "INV-FAL-9009",
     "line_count": 4,
     "confidence": 1.0,
-    "ms": 0
+    "ms": 15
   },
   {
     "file": "purchase_orders/PO-2026-1010.pdf",
@@ -307,7 +307,7 @@
     "extracted_number": "PO-2026-1010",
     "line_count": 4,
     "confidence": 1.0,
-    "ms": 16
+    "ms": 40
   },
   {
     "file": "grns/GRN-2026-5010.pdf",
@@ -317,7 +317,7 @@
     "extracted_number": "GRN-2026-5010",
     "line_count": 4,
     "confidence": 1.0,
-    "ms": 0
+    "ms": 26
   },
   {
     "file": "invoices/INV-MER-9010.pdf",
@@ -327,7 +327,7 @@
     "extracted_number": "INV-MER-9010",
     "line_count": 4,
     "confidence": 1.0,
-    "ms": 22
+    "ms": 21
   },
   {
     "file": "purchase_orders/PO-2026-1011.pdf",
@@ -337,7 +337,7 @@
     "extracted_number": "PO-2026-1011",
     "line_count": 4,
     "confidence": 1.0,
-    "ms": 12
+    "ms": 16
   },
   {
     "file": "grns/GRN-2026-5011.pdf",
@@ -347,7 +347,7 @@
     "extracted_number": "GRN-2026-5011",
     "line_count": 4,
     "confidence": 1.0,
-    "ms": 2394
+    "ms": 32
   },
   {
     "file": "invoices/INV-APE-9011.pdf",
@@ -357,7 +357,7 @@
     "extracted_number": "INV-APE-9011",
     "line_count": 4,
     "confidence": 1.0,
-    "ms": 4
+    "ms": 31
   },
   {
     "file": "purchase_orders/PO-2026-1012.pdf",
@@ -367,7 +367,7 @@
     "extracted_number": "PO-2026-1012",
     "line_count": 4,
     "confidence": 1.0,
-    "ms": 9
+    "ms": 15
   },
   {
     "file": "grns/GRN-2026-5012.pdf",
@@ -377,7 +377,7 @@
     "extracted_number": "GRN-2026-5012",
     "line_count": 4,
     "confidence": 1.0,
-    "ms": 0
+    "ms": 31
   },
   {
     "file": "invoices/INV-ZEN-9012.pdf",
@@ -387,7 +387,7 @@
     "extracted_number": "INV-ZEN-9012",
     "line_count": 4,
     "confidence": 1.0,
-    "ms": 0
+    "ms": 15
   },
   {
     "file": "purchase_orders/PO-2026-1013.pdf",
@@ -397,7 +397,7 @@
     "extracted_number": "PO-2026-1013",
     "line_count": 2,
     "confidence": 1.0,
-    "ms": 19
+    "ms": 16
   },
   {
     "file": "grns/GRN-2026-5013.pdf",
@@ -407,7 +407,7 @@
     "extracted_number": "GRN-2026-5013",
     "line_count": 2,
     "confidence": 1.0,
-    "ms": 1220
+    "ms": 26
   },
   {
     "file": "invoices/INV-FAL-9013.pdf",
@@ -417,7 +417,7 @@
     "extracted_number": "INV-FAL-9013",
     "line_count": 2,
     "confidence": 1.0,
-    "ms": 15
+    "ms": 22
   },
   {
     "file": "purchase_orders/PO-2026-1014.pdf",
@@ -427,7 +427,7 @@
     "extracted_number": "PO-2026-1014",
     "line_count": 2,
     "confidence": 0.95,
-    "ms": 1316
+    "ms": 16
   },
   {
     "file": "grns/GRN-2026-5014.pdf",
@@ -437,7 +437,7 @@
     "extracted_number": "GRN-2026-5014",
     "line_count": 2,
     "confidence": 0.95,
-    "ms": 1279
+    "ms": 5
   },
   {
     "file": "invoices/INV-MER-9014.pdf",
@@ -447,7 +447,7 @@
     "extracted_number": "INV-MER-9014",
     "line_count": 2,
     "confidence": 1.0,
-    "ms": 1460
+    "ms": 8
   },
   {
     "file": "purchase_orders/PO-2026-1015.pdf",
@@ -457,7 +457,7 @@
     "extracted_number": "PO-2026-1015",
     "line_count": 2,
     "confidence": 0.95,
-    "ms": 1276
+    "ms": 16
   },
   {
     "file": "grns/GRN-2026-5015.pdf",
@@ -467,7 +467,7 @@
     "extracted_number": "GRN-2026-5015",
     "line_count": 2,
     "confidence": 0.95,
-    "ms": 1197
+    "ms": 7
   },
   {
     "file": "invoices/INV-APE-9015.pdf",
@@ -477,7 +477,7 @@
     "extracted_number": "INV-APE-9015",
     "line_count": 2,
     "confidence": 1.0,
-    "ms": 1304
+    "ms": 0
   },
   {
     "file": "purchase_orders/PO-2026-1016.pdf",
@@ -487,7 +487,7 @@
     "extracted_number": "PO-2026-1016",
     "line_count": 3,
     "confidence": 1.0,
-    "ms": 1464
+    "ms": 16
   },
   {
     "file": "grns/GRN-2026-5016.pdf",
@@ -497,7 +497,7 @@
     "extracted_number": "GRN-2026-5016",
     "line_count": 3,
     "confidence": 0.95,
-    "ms": 1419
+    "ms": 0
   },
   {
     "file": "invoices/INV-ZEN-9016.pdf",
@@ -507,7 +507,7 @@
     "extracted_number": "INV-ZEN-9016",
     "line_count": 3,
     "confidence": 1.0,
-    "ms": 1531
+    "ms": 0
   },
   {
     "file": "purchase_orders/PO-2026-1017.pdf",
@@ -517,7 +517,7 @@
     "extracted_number": "PO-2026-1017",
     "line_count": 4,
     "confidence": 1.0,
-    "ms": 1628
+    "ms": 23
   },
   {
     "file": "grns/GRN-2026-5017.pdf",
@@ -527,7 +527,7 @@
     "extracted_number": "GRN-2026-5017",
     "line_count": 4,
     "confidence": 0.95,
-    "ms": 1554
+    "ms": 10
   },
   {
     "file": "invoices/INV-FAL-9017.pdf",
@@ -537,7 +537,7 @@
     "extracted_number": "INV-FAL-9017",
     "line_count": 4,
     "confidence": 1.0,
-    "ms": 0
+    "ms": 11
   },
   {
     "file": "purchase_orders/PO-2026-1018.pdf",
@@ -547,7 +547,7 @@
     "extracted_number": "PO-2026-1018",
     "line_count": 2,
     "confidence": 1.0,
-    "ms": 0
+    "ms": 6
   },
   {
     "file": "grns/GRN-2026-5018.pdf",
@@ -557,7 +557,7 @@
     "extracted_number": "GRN-2026-5018",
     "line_count": 2,
     "confidence": 1.0,
-    "ms": 0
+    "ms": 8
   },
   {
     "file": "invoices/INV-MER-9018.pdf",
@@ -567,7 +567,7 @@
     "extracted_number": "INV-MER-9018",
     "line_count": 2,
     "confidence": 1.0,
-    "ms": 0
+    "ms": 8
   },
   {
     "file": "purchase_orders/PO-2026-1019.pdf",
@@ -577,7 +577,7 @@
     "extracted_number": "PO-2026-1019",
     "line_count": 2,
     "confidence": 1.0,
-    "ms": 0
+    "ms": 8
   },
   {
     "file": "grns/GRN-2026-5019.pdf",
@@ -587,7 +587,7 @@
     "extracted_number": "GRN-2026-5019",
     "line_count": 2,
     "confidence": 0.95,
-    "ms": 1192
+    "ms": 8
   },
   {
     "file": "invoices/INV-APE-9019.pdf",
@@ -597,7 +597,7 @@
     "extracted_number": "INV-APE-9019",
     "line_count": 2,
     "confidence": 1.0,
-    "ms": 1325
+    "ms": 0
   },
   {
     "file": "purchase_orders/PO-2026-1020.pdf",
@@ -607,7 +607,17 @@
     "extracted_number": "PO-2026-1020",
     "line_count": 3,
     "confidence": 0.95,
-    "ms": 1430
+    "ms": 0
+  },
+  {
+    "file": "grns/GRN-2026-5020.pdf",
+    "doc_type": "GRN",
+    "set_id": 20,
+    "vendor": "Zenith Computer Traders",
+    "extracted_number": "GRN-2026-5020",
+    "line_count": 3,
+    "confidence": 0.95,
+    "ms": 24
   },
   {
     "file": "invoices/INV-ZEN-9020.pdf",
@@ -617,7 +627,7 @@
     "extracted_number": "INV-ZEN-9020",
     "line_count": 3,
     "confidence": 1.0,
-    "ms": 2216
+    "ms": 15
   },
   {
     "file": "purchase_orders/PO-2026-1021.pdf",
@@ -627,7 +637,7 @@
     "extracted_number": "PO-2026-1021",
     "line_count": 4,
     "confidence": 1.0,
-    "ms": 1716
+    "ms": 8
   },
   {
     "file": "grns/GRN-2026-5021.pdf",
@@ -637,7 +647,7 @@
     "extracted_number": "GRN-2026-5021",
     "line_count": 5,
     "confidence": 1.0,
-    "ms": 3899
+    "ms": 8
   },
   {
     "file": "invoices/INV-FAL-9021.pdf",
@@ -647,7 +657,7 @@
     "extracted_number": "INV-FAL-9021",
     "line_count": 5,
     "confidence": 1.0,
-    "ms": 1949
+    "ms": 8
   },
   {
     "file": "purchase_orders/PO-2026-1022.pdf",
@@ -657,7 +667,17 @@
     "extracted_number": "PO-2026-1022",
     "line_count": 4,
     "confidence": 1.0,
-    "ms": 1733
+    "ms": 13
+  },
+  {
+    "file": "grns/GRN-2026-5022.pdf",
+    "doc_type": "GRN",
+    "set_id": 22,
+    "vendor": "Meridian Tech Distribution",
+    "extracted_number": "GRN-2026-5022",
+    "line_count": 4,
+    "confidence": 1.0,
+    "ms": 11
   },
   {
     "file": "invoices/INV-MER-9022.pdf",
@@ -667,7 +687,7 @@
     "extracted_number": "INV-MER-9022",
     "line_count": 4,
     "confidence": 1.0,
-    "ms": 2556
+    "ms": 8
   },
   {
     "file": "purchase_orders/PO-2026-1023.pdf",
@@ -677,7 +697,17 @@
     "extracted_number": "PO-2026-1023",
     "line_count": 4,
     "confidence": 1.0,
-    "ms": 1678
+    "ms": 8
+  },
+  {
+    "file": "grns/GRN-2026-5023.pdf",
+    "doc_type": "GRN",
+    "set_id": 23,
+    "vendor": "Apex Industrial Equipment",
+    "extracted_number": "GRN-2026-5023",
+    "line_count": 4,
+    "confidence": 0.95,
+    "ms": 14
   },
   {
     "file": "invoices/INV-APE-9023.pdf",
@@ -687,7 +717,7 @@
     "extracted_number": "INV-APE-9023",
     "line_count": 4,
     "confidence": 1.0,
-    "ms": 1984
+    "ms": 10
   },
   {
     "file": "purchase_orders/PO-2026-1024.pdf",
@@ -697,6 +727,466 @@
     "extracted_number": "PO-2026-1024",
     "line_count": 3,
     "confidence": 1.0,
-    "ms": 1683
+    "ms": 9
+  },
+  {
+    "file": "grns/GRN-2026-5024.pdf",
+    "doc_type": "GRN",
+    "set_id": 24,
+    "vendor": "Zenith Computer Traders",
+    "extracted_number": "GRN-2026-5024",
+    "line_count": 3,
+    "confidence": 1.0,
+    "ms": 12
+  },
+  {
+    "file": "invoices/INV-ZEN-9024.pdf",
+    "doc_type": "INVOICE",
+    "set_id": 24,
+    "vendor": "Zenith Computer Traders",
+    "extracted_number": "INV-ZEN-9024",
+    "line_count": 3,
+    "confidence": 1.0,
+    "ms": 8
+  },
+  {
+    "file": "purchase_orders/PO-2026-1025.pdf",
+    "doc_type": "PO",
+    "set_id": 25,
+    "vendor": "Falcon Office Supplies (Pvt) Ltd",
+    "extracted_number": "PO-2026-1025",
+    "line_count": 3,
+    "confidence": 1.0,
+    "ms": 8
+  },
+  {
+    "file": "grns/GRN-2026-5025.pdf",
+    "doc_type": "GRN",
+    "set_id": 25,
+    "vendor": "Falcon Office Supplies (Pvt) Ltd",
+    "extracted_number": "GRN-2026-5025",
+    "line_count": 3,
+    "confidence": 0.95,
+    "ms": 10
+  },
+  {
+    "file": "invoices/INV-FAL-9025.pdf",
+    "doc_type": "INVOICE",
+    "set_id": 25,
+    "vendor": "Falcon Office Supplies (Pvt) Ltd",
+    "extracted_number": "INV-FAL-9025",
+    "line_count": 3,
+    "confidence": 1.0,
+    "ms": 14
+  },
+  {
+    "file": "purchase_orders/PO-2026-1026.pdf",
+    "doc_type": "PO",
+    "set_id": 26,
+    "vendor": "Meridian Tech Distribution",
+    "extracted_number": "PO-2026-1026",
+    "line_count": 4,
+    "confidence": 1.0,
+    "ms": 0
+  },
+  {
+    "file": "grns/GRN-2026-5026.pdf",
+    "doc_type": "GRN",
+    "set_id": 26,
+    "vendor": "Meridian Tech Distribution",
+    "extracted_number": "GRN-2026-5026",
+    "line_count": 4,
+    "confidence": 1.0,
+    "ms": 9
+  },
+  {
+    "file": "invoices/INV-MER-9026.pdf",
+    "doc_type": "INVOICE",
+    "set_id": 26,
+    "vendor": "Meridian Tech Distribution",
+    "extracted_number": "INV-MER-9026",
+    "line_count": 3,
+    "confidence": 1.0,
+    "ms": 14
+  },
+  {
+    "file": "purchase_orders/PO-2026-1027.pdf",
+    "doc_type": "PO",
+    "set_id": 27,
+    "vendor": "Apex Industrial Equipment",
+    "extracted_number": "PO-2026-1027",
+    "line_count": 2,
+    "confidence": 0.95,
+    "ms": 6
+  },
+  {
+    "file": "grns/GRN-2026-5027.pdf",
+    "doc_type": "GRN",
+    "set_id": 27,
+    "vendor": "Apex Industrial Equipment",
+    "extracted_number": "GRN-2026-5027",
+    "line_count": 3,
+    "confidence": 0.95,
+    "ms": 4
+  },
+  {
+    "file": "invoices/INV-APE-9027.pdf",
+    "doc_type": "INVOICE",
+    "set_id": 27,
+    "vendor": "Apex Industrial Equipment",
+    "extracted_number": "INV-APE-9027",
+    "line_count": 3,
+    "confidence": 1.0,
+    "ms": 15
+  },
+  {
+    "file": "purchase_orders/PO-2026-1028.pdf",
+    "doc_type": "PO",
+    "set_id": 28,
+    "vendor": "Zenith Computer Traders",
+    "extracted_number": "PO-2026-1028",
+    "line_count": 4,
+    "confidence": 1.0,
+    "ms": 8
+  },
+  {
+    "file": "grns/GRN-2026-5028.pdf",
+    "doc_type": "GRN",
+    "set_id": 28,
+    "vendor": "Zenith Computer Traders",
+    "extracted_number": "GRN-2026-5028",
+    "line_count": 4,
+    "confidence": 1.0,
+    "ms": 6
+  },
+  {
+    "file": "invoices/INV-ZEN-9028.pdf",
+    "doc_type": "INVOICE",
+    "set_id": 28,
+    "vendor": "Zenith Computer Traders",
+    "extracted_number": "INV-ZEN-9028",
+    "line_count": 4,
+    "confidence": 1.0,
+    "ms": 12
+  },
+  {
+    "file": "purchase_orders/PO-2026-1029.pdf",
+    "doc_type": "PO",
+    "set_id": 29,
+    "vendor": "Falcon Office Supplies (Pvt) Ltd",
+    "extracted_number": "PO-2026-1029",
+    "line_count": 3,
+    "confidence": 1.0,
+    "ms": 7
+  },
+  {
+    "file": "grns/GRN-2026-5029.pdf",
+    "doc_type": "GRN",
+    "set_id": 29,
+    "vendor": "Falcon Office Supplies (Pvt) Ltd",
+    "extracted_number": "GRN-2026-5029",
+    "line_count": 3,
+    "confidence": 1.0,
+    "ms": 12
+  },
+  {
+    "file": "invoices/INV-FAL-9029.pdf",
+    "doc_type": "INVOICE",
+    "set_id": 29,
+    "vendor": "Falcon Office Supplies (Pvt) Ltd",
+    "extracted_number": "INV-FAL-9029",
+    "line_count": 3,
+    "confidence": 1.0,
+    "ms": 11
+  },
+  {
+    "file": "purchase_orders/PO-2026-1030.pdf",
+    "doc_type": "PO",
+    "set_id": 30,
+    "vendor": "Meridian Tech Distribution",
+    "extracted_number": "PO-2026-1030",
+    "line_count": 3,
+    "confidence": 1.0,
+    "ms": 7
+  },
+  {
+    "file": "grns/GRN-2026-5030.pdf",
+    "doc_type": "GRN",
+    "set_id": 30,
+    "vendor": "Meridian Tech Distribution",
+    "extracted_number": "GRN-2026-5030",
+    "line_count": 3,
+    "confidence": 1.0,
+    "ms": 5
+  },
+  {
+    "file": "invoices/INV-MER-9030.pdf",
+    "doc_type": "INVOICE",
+    "set_id": 30,
+    "vendor": "Meridian Tech Distribution",
+    "extracted_number": "INV-MER-9030",
+    "line_count": 3,
+    "confidence": 1.0,
+    "ms": 12
+  },
+  {
+    "file": "purchase_orders/PO-2026-1031.pdf",
+    "doc_type": "PO",
+    "set_id": 31,
+    "vendor": "Apex Industrial Equipment",
+    "extracted_number": "PO-2026-1031",
+    "line_count": 4,
+    "confidence": 1.0,
+    "ms": 11
+  },
+  {
+    "file": "grns/GRN-2026-5031.pdf",
+    "doc_type": "GRN",
+    "set_id": 31,
+    "vendor": "Apex Industrial Equipment",
+    "extracted_number": "GRN-2026-5031",
+    "line_count": 4,
+    "confidence": 0.95,
+    "ms": 2626
+  },
+  {
+    "file": "invoices/INV-APE-9031.pdf",
+    "doc_type": "INVOICE",
+    "set_id": 31,
+    "vendor": "Apex Industrial Equipment",
+    "extracted_number": "INV-APE-9031",
+    "line_count": 4,
+    "confidence": 1.0,
+    "ms": 1646
+  },
+  {
+    "file": "purchase_orders/PO-2026-1032.pdf",
+    "doc_type": "PO",
+    "set_id": 32,
+    "vendor": "Zenith Computer Traders",
+    "extracted_number": "PO-2026-1032",
+    "line_count": 4,
+    "confidence": 1.0,
+    "ms": 48
+  },
+  {
+    "file": "grns/GRN-2026-5032.pdf",
+    "doc_type": "GRN",
+    "set_id": 32,
+    "vendor": "Zenith Computer Traders",
+    "extracted_number": "GRN-2026-5032",
+    "line_count": 4,
+    "confidence": 1.0,
+    "ms": 15
+  },
+  {
+    "file": "invoices/INV-ZEN-9032.pdf",
+    "doc_type": "INVOICE",
+    "set_id": 32,
+    "vendor": "Zenith Computer Traders",
+    "extracted_number": "INV-ZEN-9032",
+    "line_count": 4,
+    "confidence": 1.0,
+    "ms": 24
+  },
+  {
+    "file": "purchase_orders/PO-2026-1033.pdf",
+    "doc_type": "PO",
+    "set_id": 33,
+    "vendor": "Falcon Office Supplies (Pvt) Ltd",
+    "extracted_number": "PO-2026-1033",
+    "line_count": 2,
+    "confidence": 0.95,
+    "ms": 1414
+  },
+  {
+    "file": "grns/GRN-2026-5033.pdf",
+    "doc_type": "GRN",
+    "set_id": 33,
+    "vendor": "Falcon Office Supplies (Pvt) Ltd",
+    "extracted_number": "GRN-2026-5033",
+    "line_count": 2,
+    "confidence": 0.95,
+    "ms": 1292
+  },
+  {
+    "file": "invoices/INV-FAL-9033.pdf",
+    "doc_type": "INVOICE",
+    "set_id": 33,
+    "vendor": "Falcon Office Supplies (Pvt) Ltd",
+    "extracted_number": "INV-FAL-9033",
+    "line_count": 2,
+    "confidence": 1.0,
+    "ms": 1292
+  },
+  {
+    "file": "purchase_orders/PO-2026-1034.pdf",
+    "doc_type": "PO",
+    "set_id": 34,
+    "vendor": "Meridian Tech Distribution",
+    "extracted_number": "PO-2026-1034",
+    "line_count": 3,
+    "confidence": 0.95,
+    "ms": 1537
+  },
+  {
+    "file": "grns/GRN-2026-5034.pdf",
+    "doc_type": "GRN",
+    "set_id": 34,
+    "vendor": "Meridian Tech Distribution",
+    "extracted_number": "GRN-2026-5034",
+    "line_count": 3,
+    "confidence": 1.0,
+    "ms": 1522
+  },
+  {
+    "file": "invoices/INV-MER-9034.pdf",
+    "doc_type": "INVOICE",
+    "set_id": 34,
+    "vendor": "Meridian Tech Distribution",
+    "extracted_number": "INV-MER-9034",
+    "line_count": 3,
+    "confidence": 1.0,
+    "ms": 1559
+  },
+  {
+    "file": "purchase_orders/PO-2026-1035.pdf",
+    "doc_type": "PO",
+    "set_id": 35,
+    "vendor": "Apex Industrial Equipment",
+    "extracted_number": "PO-2026-1035",
+    "line_count": 4,
+    "confidence": 1.0,
+    "ms": 1827
+  },
+  {
+    "file": "grns/GRN-2026-5035.pdf",
+    "doc_type": "GRN",
+    "set_id": 35,
+    "vendor": "Apex Industrial Equipment",
+    "extracted_number": "GRN-2026-5035",
+    "line_count": 4,
+    "confidence": 0.95,
+    "ms": 1505
+  },
+  {
+    "file": "invoices/INV-APE-9035.pdf",
+    "doc_type": "INVOICE",
+    "set_id": 35,
+    "vendor": "Apex Industrial Equipment",
+    "extracted_number": "INV-APE-9035",
+    "line_count": 4,
+    "confidence": 1.0,
+    "ms": 1638
+  },
+  {
+    "file": "purchase_orders/PO-2026-1036.pdf",
+    "doc_type": "PO",
+    "set_id": 36,
+    "vendor": "Zenith Computer Traders",
+    "extracted_number": "PO-2026-1036",
+    "line_count": 3,
+    "confidence": 1.0,
+    "ms": 1575
+  },
+  {
+    "file": "grns/GRN-2026-5036.pdf",
+    "doc_type": "GRN",
+    "set_id": 36,
+    "vendor": "Zenith Computer Traders",
+    "extracted_number": "GRN-2026-5036",
+    "line_count": 3,
+    "confidence": 1.0,
+    "ms": 1351
+  },
+  {
+    "file": "invoices/INV-ZEN-9036.pdf",
+    "doc_type": "INVOICE",
+    "set_id": 36,
+    "vendor": "Zenith Computer Traders",
+    "extracted_number": "INV-ZEN-9036",
+    "line_count": 3,
+    "confidence": 1.0,
+    "ms": 1556
+  },
+  {
+    "file": "purchase_orders/PO-2026-1037.pdf",
+    "doc_type": "PO",
+    "set_id": 37,
+    "vendor": "Falcon Office Supplies (Pvt) Ltd",
+    "extracted_number": "PO-2026-1037",
+    "line_count": 4,
+    "confidence": 1.0,
+    "ms": 1898
+  },
+  {
+    "file": "grns/GRN-2026-5037.pdf",
+    "doc_type": "GRN",
+    "set_id": 37,
+    "vendor": "Falcon Office Supplies (Pvt) Ltd",
+    "extracted_number": "GRN-2026-5037",
+    "line_count": 4,
+    "confidence": 0.95,
+    "ms": 1499
+  },
+  {
+    "file": "invoices/INV-FAL-9037.pdf",
+    "doc_type": "INVOICE",
+    "set_id": 37,
+    "vendor": "Falcon Office Supplies (Pvt) Ltd",
+    "extracted_number": "INV-FAL-9037",
+    "line_count": 4,
+    "confidence": 1.0,
+    "ms": 2126
+  },
+  {
+    "file": "purchase_orders/PO-2026-1038.pdf",
+    "doc_type": "PO",
+    "set_id": 38,
+    "vendor": "Meridian Tech Distribution",
+    "extracted_number": "PO-2026-1038",
+    "line_count": 2,
+    "confidence": 1.0,
+    "ms": 1293
+  },
+  {
+    "file": "grns/GRN-2026-5038.pdf",
+    "doc_type": "GRN",
+    "set_id": 38,
+    "vendor": "Meridian Tech Distribution",
+    "extracted_number": "GRN-2026-5038",
+    "line_count": 2,
+    "confidence": 1.0,
+    "ms": 2725
+  },
+  {
+    "file": "invoices/INV-MER-9038.pdf",
+    "doc_type": "INVOICE",
+    "set_id": 38,
+    "vendor": "Meridian Tech Distribution",
+    "extracted_number": "INV-MER-9038",
+    "line_count": 2,
+    "confidence": 1.0,
+    "ms": 1458
+  },
+  {
+    "file": "purchase_orders/PO-2026-1039.pdf",
+    "doc_type": "PO",
+    "set_id": 39,
+    "vendor": "Apex Industrial Equipment",
+    "extracted_number": "PO-2026-1039",
+    "line_count": 3,
+    "confidence": 1.0,
+    "ms": 1566
+  },
+  {
+    "file": "invoices/INV-APE-9039.pdf",
+    "doc_type": "INVOICE",
+    "set_id": 39,
+    "vendor": "Apex Industrial Equipment",
+    "extracted_number": "INV-APE-9039",
+    "line_count": 3,
+    "confidence": 1.0,
+    "ms": 1575
   }
 ]

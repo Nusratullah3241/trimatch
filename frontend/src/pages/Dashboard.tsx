@@ -96,7 +96,7 @@ export default function Dashboard() {
                 <span className="text-sm text-muted flex-1">
                   {r.exceptions.length === 0
                     ? "No discrepancies"
-                    : `${r.exceptions.length} discrepancies`}
+                    : `${r.exceptions.length} discrepanc${r.exceptions.length === 1 ? "y" : "ies"}`}
                 </span>
                 <span className="figure text-sm">
                   {r.total_variance ? money(r.total_variance) : "-"}
