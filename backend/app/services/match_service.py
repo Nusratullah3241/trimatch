@@ -1,16 +1,11 @@
-"""Orchestrates a complete three-way match and saves it to the database.
-
-This is the layer that ties extraction + matching + rules together
-and makes the result persistent.
-"""
+"""Orchestrates a complete three-way match and saves it to the database."""
 import time
-from datetime import datetime
 from pathlib import Path
 
 from sqlalchemy.orm import Session
 
 from app.models import Document, LineItem, MatchRun, MatchException
-from app.services import extractor, line_matcher, rules_engine
+from app.services import extractor, line_matcher, rules_engine, tolerance_service
 
 DOC_TYPE_PREFIXES = {
     "PO": ("PO",),
@@ -51,9 +46,7 @@ def _save_document(db: Session, file_path: str, doc_type: str,
                    source: str = "UPLOAD") -> Document:
     """Extracts one PDF and stores it with its line items."""
     data = extractor.extract(file_path, doc_type)
-    # Guard: does the extracted document number match the declared type?
-    # Uploading a GRN into the Invoice slot produces silent nonsense -
-    # a GRN has no prices, so every line reads as a 100% price variance.
+
     _verify_doc_type(data.document_number, doc_type, Path(file_path).name)
 
     doc = Document(
@@ -70,7 +63,7 @@ def _save_document(db: Session, file_path: str, doc_type: str,
         source=source,
     )
     db.add(doc)
-    db.flush()          # assigns doc.id without committing yet
+    db.flush()
 
     for i, ln in enumerate(data.line_items, 1):
         db.add(LineItem(
@@ -89,10 +82,10 @@ def _save_document(db: Session, file_path: str, doc_type: str,
 
 def _is_duplicate(db: Session, invoice: Document) -> bool:
     """
-    BONUS RULE: has this exact invoice already been processed?
+    Has this exact invoice already been processed?
 
-    Paying the same invoice twice is one of the most common and
-    expensive errors in accounts payable.
+    Paying the same invoice twice is one of the most common and expensive
+    errors in accounts payable.
     """
     if not invoice.document_number:
         return False
@@ -110,22 +103,20 @@ def _is_duplicate(db: Session, invoice: Document) -> bool:
 
 def run_match(db: Session, po_path: str, grn_path: str, invoice_path: str,
               source: str = "UPLOAD") -> MatchRun:
-    """
-    The complete pipeline: read three PDFs, compare them, save the verdict.
-    """
+    """The complete pipeline: read three PDFs, compare them, save the verdict."""
     started = time.time()
 
     po_doc = _save_document(db, po_path, "PO", source)
     grn_doc = _save_document(db, grn_path, "GRN", source)
     inv_doc = _save_document(db, invoice_path, "INVOICE", source)
 
-    triplets = line_matcher.match_lines(
-        po_doc.lines, grn_doc.lines, inv_doc.lines
-    )
-    exceptions = rules_engine.evaluate(triplets)
+    tolerances = tolerance_service.get_tolerances(db)
 
-    # Duplicate check runs against the database, so it lives here
-    # rather than in the pure rules engine.
+    triplets = line_matcher.match_lines(po_doc.lines, grn_doc.lines, inv_doc.lines)
+    exceptions = rules_engine.evaluate(triplets, tolerances)
+
+    # Duplicate check needs database state, so it lives here rather than
+    # in the pure rules engine.
     if _is_duplicate(db, inv_doc):
         exceptions.append({
             "exception_type": "DUPLICATE_INVOICE",
@@ -147,6 +138,8 @@ def run_match(db: Session, po_path: str, grn_path: str, invoice_path: str,
         status=verdict["status"],
         total_variance=verdict["total_variance"],
         processing_ms=elapsed_ms,
+        applied_price_tolerance_pct=tolerances.price_pct,
+        applied_absolute_tolerance=tolerances.absolute_amount,
     )
     db.add(run)
     db.flush()

@@ -44,6 +44,8 @@ export interface MatchRun {
   po_doc_id: number;
   grn_doc_id: number;
   invoice_doc_id: number;
+  applied_price_tolerance_pct: number;
+  applied_absolute_tolerance: number;
   exceptions: MatchException[];
 }
 
@@ -57,4 +59,12 @@ export interface Stats {
   exceptions_by_type: Record<string, number>;
   pending_review: number;
   estimated_minutes_saved: number;
+}
+
+export interface Tolerances {
+  price_tolerance_pct: number;
+  absolute_tolerance_amount: number;
+  quantity_tolerance_pct: number;
+  updated_at: string;
+  updated_by: string;
 }

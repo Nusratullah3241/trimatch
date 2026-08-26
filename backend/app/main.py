@@ -4,14 +4,14 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.config import settings
 from app.database import Base, engine
-from app.routers import documents, matching, stats
+from app.routers import documents, matching, stats, tolerances
 
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
     title="TriMatch API",
     description="AI-powered three-way match for accounts payable",
-    version="1.0.0",
+    version="1.1.0",
 )
 
 app.add_middleware(
@@ -25,6 +25,7 @@ app.add_middleware(
 app.include_router(documents.router, prefix="/api/documents", tags=["documents"])
 app.include_router(matching.router, prefix="/api/match", tags=["matching"])
 app.include_router(stats.router, prefix="/api/stats", tags=["stats"])
+app.include_router(tolerances.router, prefix="/api/tolerances", tags=["tolerances"])
 
 
 @app.get("/api/health")

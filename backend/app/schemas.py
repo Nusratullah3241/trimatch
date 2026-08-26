@@ -1,7 +1,7 @@
 """Shapes of the data going in and out of the API."""
 from datetime import datetime
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, Field
 
 
 class LineItemOut(BaseModel):
@@ -55,9 +55,11 @@ class MatchRunOut(BaseModel):
     total_variance: float
     processing_ms: int
     created_at: datetime
-    po_doc_id: int          # add
-    grn_doc_id: int         # add
-    invoice_doc_id: int     # add
+    po_doc_id: int
+    grn_doc_id: int
+    invoice_doc_id: int
+    applied_price_tolerance_pct: float
+    applied_absolute_tolerance: float
     exceptions: list[ExceptionOut] = []
 
 
@@ -69,3 +71,19 @@ class MatchRequest(BaseModel):
 
 class ResolveRequest(BaseModel):
     resolution: str   # APPROVED | REJECTED | CREDIT_NOTE_REQUESTED
+
+
+class ToleranceOut(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
+    price_tolerance_pct: float
+    absolute_tolerance_amount: float
+    quantity_tolerance_pct: float
+    updated_at: datetime
+    updated_by: str
+
+
+class ToleranceUpdate(BaseModel):
+    price_tolerance_pct: float = Field(ge=0, le=50)
+    absolute_tolerance_amount: float = Field(ge=0)
+    quantity_tolerance_pct: float = Field(ge=0, le=20)

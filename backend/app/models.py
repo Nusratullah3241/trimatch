@@ -24,7 +24,7 @@ class Document(Base):
     raw_text: Mapped[str] = mapped_column(Text, default="")
     was_scanned: Mapped[bool] = mapped_column(Boolean, default=False)
     extraction_confidence: Mapped[float] = mapped_column(Float, default=0.0)
-    source: Mapped[str] = mapped_column(String(20), default="UPLOAD")  # UPLOAD | WATCHER
+    source: Mapped[str] = mapped_column(String(20), default="UPLOAD")
     uploaded_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
 
     lines: Mapped[list["LineItem"]] = relationship(
@@ -63,6 +63,11 @@ class MatchRun(Base):
     processing_ms: Mapped[int] = mapped_column(Integer, default=0)
     created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
 
+    # The tolerances in force when this run was evaluated. Recorded so a
+    # historical result can still be explained after the settings change.
+    applied_price_tolerance_pct: Mapped[float] = mapped_column(Float, default=2.0)
+    applied_absolute_tolerance: Mapped[float] = mapped_column(Float, default=500.0)
+
     exceptions: Mapped[list["MatchException"]] = relationship(
         back_populates="match_run", cascade="all, delete-orphan"
     )
@@ -88,3 +93,26 @@ class MatchException(Base):
     resolved_at: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
 
     match_run: Mapped["MatchRun"] = relationship(back_populates="exceptions")
+
+
+class Tolerance(Base):
+    """
+    Business rule thresholds, editable at runtime.
+
+    Stored as a single row (id=1). Kept in the database rather than in
+    .env so an approver can adjust them without a redeploy - which is how
+    these limits actually change in an organisation, usually after an
+    audit or a policy review.
+    """
+    __tablename__ = "tolerances"
+
+    id: Mapped[int] = mapped_column(primary_key=True, default=1)
+
+    price_tolerance_pct: Mapped[float] = mapped_column(Float, default=2.0)
+    absolute_tolerance_amount: Mapped[float] = mapped_column(Float, default=500.0)
+    quantity_tolerance_pct: Mapped[float] = mapped_column(Float, default=0.0)
+
+    updated_at: Mapped[datetime] = mapped_column(
+        DateTime, default=datetime.utcnow, onupdate=datetime.utcnow
+    )
+    updated_by: Mapped[str] = mapped_column(String(100), default="system")

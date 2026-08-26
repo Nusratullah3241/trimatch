@@ -1,12 +1,33 @@
 """Applies business rules to matched triplets and produces exceptions.
 
-Deliberately pure: no database, no API calls, no file access.
-That makes the business logic easy to unit test - which matters,
-because this is the layer that decides whether money is paid.
+Deliberately pure: no database, no API calls, no file access. Tolerances
+are passed in rather than read from global config, so this module has no
+idea where they came from - .env, a database row, or a test fixture.
+
+That makes the business logic easy to unit test, which matters, because
+this is the layer that decides whether money is paid.
 """
+from dataclasses import dataclass
 from decimal import Decimal
 
 from app.config import settings
+
+
+@dataclass(frozen=True)
+class Tolerances:
+    """The thresholds a single evaluation runs under."""
+    price_pct: float = 2.0
+    absolute_amount: float = 500.0
+    quantity_pct: float = 0.0
+
+    @classmethod
+    def from_env(cls) -> "Tolerances":
+        """Fallback used when no explicit tolerances are supplied."""
+        return cls(
+            price_pct=settings.price_tolerance_pct,
+            absolute_amount=settings.absolute_tolerance_amount,
+            quantity_pct=settings.quantity_tolerance_pct,
+        )
 
 
 def _d(value) -> Decimal:
@@ -29,8 +50,14 @@ def _exception(exc_type, severity, description, expected, actual,
     }
 
 
-def evaluate(triplets: list[dict]) -> list[dict]:
-    """Returns a list of exceptions. Empty list means everything matched."""
+def evaluate(triplets: list[dict], tolerances: Tolerances | None = None) -> list[dict]:
+    """
+    Returns a list of exceptions. Empty list means everything matched.
+
+    tolerances defaults to the values in .env, so existing callers and
+    tests keep working unchanged.
+    """
+    tol = tolerances or Tolerances.from_env()
     exceptions = []
 
     for t in triplets:
@@ -67,8 +94,8 @@ def evaluate(triplets: list[dict]) -> list[dict]:
         # price could not be read from the document.
         #
         # Treating it as a price variance produces a confident, wrong finding:
-        # "actual 0.00, 100% variance". The system would be reporting an
-        # overcharge that does not exist while hiding a genuine failure.
+        # "actual 0.00, 100% variance". The system would report an overcharge
+        # that does not exist while hiding a genuine failure.
         #
         # Knowing when it does not know is more valuable here than guessing.
         if inv_price <= 0 and po_price > 0:
@@ -86,8 +113,8 @@ def evaluate(triplets: list[dict]) -> list[dict]:
                 pct = abs(diff) / po_price * 100
                 amount = abs(diff) * inv_qty
 
-                over_pct = pct > _d(settings.price_tolerance_pct)
-                over_abs = amount > _d(settings.absolute_tolerance_amount)
+                over_pct = pct > _d(tol.price_pct)
+                over_abs = amount > _d(tol.absolute_amount)
 
                 # BOTH must be breached. A 5% rise on a 100-rupee item is
                 # 5 rupees - not worth a reviewer's attention.
@@ -103,12 +130,14 @@ def evaluate(triplets: list[dict]) -> list[dict]:
         received = _d(grn.quantity) if grn is not None else Decimal(0)
         if inv_qty > received:
             over_qty = inv_qty - received
-            amount = over_qty * inv_price
-            pct = (over_qty / inv_qty * 100) if inv_qty else Decimal(0)
-            exceptions.append(_exception(
-                "QUANTITY_VARIANCE", "HIGH", po.description,
-                f"{received:g} received", f"{inv_qty:g} billed",
-                amount, pct))
+            allowed = received * _d(tol.quantity_pct) / 100
+            if over_qty > allowed:
+                amount = over_qty * inv_price
+                pct = (over_qty / inv_qty * 100) if inv_qty else Decimal(0)
+                exceptions.append(_exception(
+                    "QUANTITY_VARIANCE", "HIGH", po.description,
+                    f"{received:g} received", f"{inv_qty:g} billed",
+                    amount, pct))
 
     return exceptions
 

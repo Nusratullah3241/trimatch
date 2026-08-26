@@ -1,4 +1,10 @@
-﻿import type { Document, MatchRun, MatchException, Stats } from "../types";
+﻿import type {
+  Document,
+  MatchRun,
+  MatchException,
+  Stats,
+  Tolerances,
+} from "../types";
 
 const BASE = import.meta.env.VITE_API_URL || "http://127.0.0.1:8000";
 
@@ -8,7 +14,12 @@ async function req<T>(path: string, init?: RequestInit): Promise<T> {
     let message = res.statusText;
     try {
       const body = await res.json();
-      if (body?.detail) message = body.detail;
+      if (body?.detail) {
+        // FastAPI validation errors come back as an array of objects
+        message = Array.isArray(body.detail)
+          ? body.detail.map((d: { msg?: string }) => d.msg ?? "invalid value").join("; ")
+          : body.detail;
+      }
     } catch {
       // response wasn't JSON - keep the status text
     }
@@ -58,6 +69,26 @@ export function resolveException(id: number, resolution: string): Promise<MatchE
 
 export function getStats(): Promise<Stats> {
   return req<Stats>("/api/stats");
+}
+
+export function getTolerances(): Promise<Tolerances> {
+  return req<Tolerances>("/api/tolerances");
+}
+
+export function updateTolerances(t: {
+  price_tolerance_pct: number;
+  absolute_tolerance_amount: number;
+  quantity_tolerance_pct: number;
+}): Promise<Tolerances> {
+  return req<Tolerances>("/api/tolerances", {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(t),
+  });
+}
+
+export function resetTolerances(): Promise<Tolerances> {
+  return req<Tolerances>("/api/tolerances/reset", { method: "POST" });
 }
 
 export function money(n: number): string {
