@@ -33,8 +33,13 @@ export default function NewMatch() {
       const doc = await uploadDocument(file, slot);
       setSlots((s) => ({ ...s, [slot]: { status: "done", doc } }));
     } catch (e) {
-      setSlots((s) => ({ ...s, [slot]: { status: "error", message: String(e) } }));
+      const message = e instanceof Error ? e.message : String(e);
+      setSlots((s) => ({ ...s, [slot]: { status: "error", message } }));
     }
+  }
+
+  function resetSlot(slot: Slot) {
+    setSlots((s) => ({ ...s, [slot]: { status: "empty" } }));
   }
 
   const ready =
@@ -50,7 +55,7 @@ export default function NewMatch() {
       const run = await runMatch(slots.PO.doc!.id, slots.GRN.doc!.id, slots.INVOICE.doc!.id);
       navigate(`/match/${run.id}`);
     } catch (e) {
-      setError(String(e));
+      setError(e instanceof Error ? e.message : String(e));
       setRunning(false);
     }
   }
@@ -101,12 +106,26 @@ export default function NewMatch() {
                         {(state.doc.extraction_confidence * 100).toFixed(0)}%
                       </span>
                     </div>
+                    <button
+                      className="text-xs text-muted underline pt-1"
+                      onClick={() => resetSlot(key)}
+                    >
+                      replace
+                    </button>
                   </div>
                 )}
 
                 {state.status === "error" && (
-                  <div className="text-xs text-breach">
-                    Could not read that file. {state.message?.slice(0, 90)}
+                  <div className="space-y-2">
+                    <div className="text-xs text-breach leading-relaxed">
+                      {state.message}
+                    </div>
+                    <button
+                      className="text-xs text-muted underline"
+                      onClick={() => resetSlot(key)}
+                    >
+                      try another file
+                    </button>
                   </div>
                 )}
               </div>

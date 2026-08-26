@@ -5,8 +5,14 @@ const BASE = import.meta.env.VITE_API_URL || "http://127.0.0.1:8000";
 async function req<T>(path: string, init?: RequestInit): Promise<T> {
   const res = await fetch(`${BASE}${path}`, init);
   if (!res.ok) {
-    const detail = await res.text();
-    throw new Error(`${res.status}: ${detail.slice(0, 200)}`);
+    let message = res.statusText;
+    try {
+      const body = await res.json();
+      if (body?.detail) message = body.detail;
+    } catch {
+      // response wasn't JSON - keep the status text
+    }
+    throw new Error(message);
   }
   return res.json();
 }

@@ -5,11 +5,10 @@ from pathlib import Path
 from fastapi import APIRouter, Depends, File, Form, HTTPException, UploadFile
 from sqlalchemy.orm import Session
 
-from app.config import settings
 from app.database import get_db
 from app.models import Document
 from app.schemas import DocumentOut
-from app.services.match_service import _save_document
+from app.services.match_service import _save_document, DocumentTypeMismatch
 
 router = APIRouter()
 
@@ -37,6 +36,9 @@ def upload_document(
         db.commit()
         db.refresh(doc)
         return doc
+    except DocumentTypeMismatch as e:
+        db.rollback()
+        raise HTTPException(422, str(e))
     except Exception as e:
         db.rollback()
         raise HTTPException(500, f"Extraction failed: {e}")

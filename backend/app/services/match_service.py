@@ -12,11 +12,49 @@ from sqlalchemy.orm import Session
 from app.models import Document, LineItem, MatchRun, MatchException
 from app.services import extractor, line_matcher, rules_engine
 
+DOC_TYPE_PREFIXES = {
+    "PO": ("PO",),
+    "GRN": ("GRN",),
+    "INVOICE": ("INV", "INVOICE", "BILL"),
+}
+
+
+class DocumentTypeMismatch(ValueError):
+    """The document does not look like the type it was uploaded as."""
+
+
+def _verify_doc_type(document_number: str | None, declared: str, filename: str):
+    """
+    Cheap sanity check on the extracted document number.
+
+    Only rejects when the number clearly belongs to a DIFFERENT known type.
+    An unrecognised or missing number is allowed through - being strict there
+    would reject valid documents from vendors with unusual numbering.
+    """
+    if not document_number:
+        return
+
+    prefix = document_number.strip().upper()
+
+    for doc_type, prefixes in DOC_TYPE_PREFIXES.items():
+        if doc_type == declared:
+            continue
+        if any(prefix.startswith(p) for p in prefixes):
+            raise DocumentTypeMismatch(
+                f"'{filename}' was uploaded as {declared}, but its document "
+                f"number '{document_number}' identifies it as a {doc_type}. "
+                f"Check the upload slots."
+            )
+
 
 def _save_document(db: Session, file_path: str, doc_type: str,
                    source: str = "UPLOAD") -> Document:
     """Extracts one PDF and stores it with its line items."""
     data = extractor.extract(file_path, doc_type)
+    # Guard: does the extracted document number match the declared type?
+    # Uploading a GRN into the Invoice slot produces silent nonsense -
+    # a GRN has no prices, so every line reads as a 100% price variance.
+    _verify_doc_type(data.document_number, doc_type, Path(file_path).name)
 
     doc = Document(
         doc_type=doc_type,
