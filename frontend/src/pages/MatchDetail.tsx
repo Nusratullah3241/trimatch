@@ -10,12 +10,18 @@ const ACTIONS = [
   { key: "CREDIT_NOTE_REQUESTED", label: "Request credit note" },
 ];
 
+const VERIFY_ACTIONS = [
+  { key: "APPROVED", label: "Verified, looks right" },
+  { key: "REJECTED", label: "Send back for re-scan" },
+];
+
 const TYPE_LABEL: Record<string, string> = {
   PRICE_VARIANCE: "Price above the agreed rate",
   QUANTITY_VARIANCE: "Billed for more than arrived",
   UNAUTHORIZED_ITEM: "Item was never ordered",
   MISSING_ON_INVOICE: "Received but not billed",
   DUPLICATE_INVOICE: "This invoice was already processed",
+  EXTRACTION_FAILURE: "Could not read this line",
 };
 
 export default function MatchDetail() {
@@ -36,7 +42,7 @@ export default function MatchDetail() {
         ]);
         setDocs({ po, grn, invoice });
       })
-      .catch((e) => setError(String(e)));
+      .catch((e) => setError(e instanceof Error ? e.message : String(e)));
   }, [id]);
 
   async function handleResolve(excId: number, resolution: string) {
@@ -49,6 +55,9 @@ export default function MatchDetail() {
   if (!run) return <div className="text-muted text-sm">Loading...</div>;
 
   const cleared = run.status === "MATCHED";
+  const unreadable = run.exceptions.filter(
+    (e) => e.exception_type === "EXTRACTION_FAILURE"
+  ).length;
 
   return (
     <div className="space-y-8">
@@ -72,11 +81,25 @@ export default function MatchDetail() {
           }`}
         >
           {cleared ? "Cleared for payment" : `${run.exceptions.length} to review`}
-          {!cleared && (
+          {!cleared && run.total_variance > 0 && (
             <div className="figure text-lg mt-0.5">{money(run.total_variance)}</div>
           )}
         </div>
       </div>
+
+      {unreadable > 0 && (
+        <div className="card p-4 border-variance/40 bg-variance/5">
+          <div className="text-sm">
+            <span className="font-medium text-variance">
+              {unreadable} line{unreadable === 1 ? "" : "s"} could not be read.
+            </span>{" "}
+            <span className="text-muted">
+              These are extraction failures, not discrepancies. Nothing is at
+              stake financially until someone verifies the document.
+            </span>
+          </div>
+        </div>
+      )}
 
       {docs.po && docs.grn && docs.invoice && (
         <section>
@@ -89,78 +112,97 @@ export default function MatchDetail() {
         <section>
           <h2 className="eyebrow mb-3">What needs a decision</h2>
           <div className="space-y-3">
-            {run.exceptions.map((exc) => (
-              <div key={exc.id} className="card p-5">
-                <div className="flex items-center gap-3">
-                  <span
-                    className={`text-xs px-2 py-0.5 border ${
-                      exc.severity === "HIGH"
-                        ? "text-breach border-breach/40"
-                        : exc.severity === "MEDIUM"
-                        ? "text-variance border-variance/40"
-                        : "text-muted border-rule"
-                    }`}
-                  >
-                    {exc.severity}
-                  </span>
-                  <span className="text-sm font-medium">
-                    {TYPE_LABEL[exc.exception_type] ?? exc.exception_type}
-                  </span>
-                </div>
+            {run.exceptions.map((exc) => {
+              const isExtraction = exc.exception_type === "EXTRACTION_FAILURE";
+              const actions = isExtraction ? VERIFY_ACTIONS : ACTIONS;
 
-                <div className="text-sm mt-2">{exc.line_description}</div>
+              return (
+                <div
+                  key={exc.id}
+                  className={`card p-5 ${isExtraction ? "border-variance/40" : ""}`}
+                >
+                  <div className="flex items-center gap-3">
+                    <span
+                      className={`text-xs px-2 py-0.5 border ${
+                        isExtraction
+                          ? "text-variance border-variance/40"
+                          : exc.severity === "HIGH"
+                          ? "text-breach border-breach/40"
+                          : exc.severity === "MEDIUM"
+                          ? "text-variance border-variance/40"
+                          : "text-muted border-rule"
+                      }`}
+                    >
+                      {isExtraction ? "UNREADABLE" : exc.severity}
+                    </span>
+                    <span className="text-sm font-medium">
+                      {TYPE_LABEL[exc.exception_type] ?? exc.exception_type}
+                    </span>
+                  </div>
 
-                <div className="flex gap-8 mt-3">
-                  <div>
-                    <div className="eyebrow">Expected</div>
-                    <div className="figure text-sm">{exc.expected_value}</div>
-                  </div>
-                  <div>
-                    <div className="eyebrow">Actual</div>
-                    <div className="figure text-sm text-breach">{exc.actual_value}</div>
-                  </div>
-                  <div>
-                    <div className="eyebrow">At stake</div>
-                    <div className="figure text-sm">
-                      {money(exc.variance_amount)}
-                      <span className="text-muted ml-1">({exc.variance_pct}%)</span>
+                  <div className="text-sm mt-2">{exc.line_description}</div>
+
+                  <div className="flex gap-8 mt-3">
+                    <div>
+                      <div className="eyebrow">Expected</div>
+                      <div className="figure text-sm">{exc.expected_value}</div>
                     </div>
-                  </div>
-                </div>
-
-                {exc.ai_explanation && (
-                  <p className="text-sm text-muted mt-3 border-l-2 border-rule pl-3">
-                    {exc.ai_explanation}
-                  </p>
-                )}
-
-                <div className="flex items-center gap-2 mt-4 pt-4 border-t border-rule">
-                  {exc.resolution === "PENDING" ? (
-                    ACTIONS.map((a) => (
-                      <button
-                        key={a.key}
-                        className="btn-ghost text-xs"
-                        onClick={() => handleResolve(exc.id, a.key)}
+                    <div>
+                      <div className="eyebrow">Actual</div>
+                      <div
+                        className={`figure text-sm ${
+                          isExtraction ? "text-variance" : "text-breach"
+                        }`}
                       >
-                        {a.label}
-                      </button>
-                    ))
-                  ) : (
-                    <div className="flex items-center gap-3">
-                      <span className="text-xs text-matched">
-                        {ACTIONS.find((a) => a.key === exc.resolution)?.label ?? exc.resolution}
-                      </span>
-                      <button
-                        className="text-xs text-muted underline"
-                        onClick={() => handleResolve(exc.id, "PENDING")}
-                      >
-                        undo
-                      </button>
+                        {exc.actual_value}
+                      </div>
                     </div>
+                    {!isExtraction && (
+                      <div>
+                        <div className="eyebrow">At stake</div>
+                        <div className="figure text-sm">
+                          {money(exc.variance_amount)}
+                          <span className="text-muted ml-1">({exc.variance_pct}%)</span>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+
+                  {exc.ai_explanation && (
+                    <p className="text-sm text-muted mt-3 border-l-2 border-rule pl-3">
+                      {exc.ai_explanation}
+                    </p>
                   )}
+
+                  <div className="flex items-center gap-2 mt-4 pt-4 border-t border-rule">
+                    {exc.resolution === "PENDING" ? (
+                      actions.map((a) => (
+                        <button
+                          key={a.key}
+                          className="btn-ghost text-xs"
+                          onClick={() => handleResolve(exc.id, a.key)}
+                        >
+                          {a.label}
+                        </button>
+                      ))
+                    ) : (
+                      <div className="flex items-center gap-3">
+                        <span className="text-xs text-matched">
+                          {actions.find((a) => a.key === exc.resolution)?.label ??
+                            exc.resolution}
+                        </span>
+                        <button
+                          className="text-xs text-muted underline"
+                          onClick={() => handleResolve(exc.id, "PENDING")}
+                        >
+                          undo
+                        </button>
+                      </div>
+                    )}
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </section>
       )}

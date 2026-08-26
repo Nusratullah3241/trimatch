@@ -1,7 +1,8 @@
 """Applies business rules to matched triplets and produces exceptions.
 
 Deliberately pure: no database, no API calls, no file access.
-That makes it easy to unit test - which is worth marks on its own.
+That makes the business logic easy to unit test - which matters,
+because this is the layer that decides whether money is paid.
 """
 from decimal import Decimal
 
@@ -59,6 +60,25 @@ def evaluate(triplets: list[dict]) -> list[dict]:
         inv_price = _d(inv.unit_price)
         inv_qty = _d(inv.quantity)
 
+        # RULE 0 - extraction sanity check, runs BEFORE the price rule.
+        #
+        # A unit price of zero on an invoice line is almost never real - an
+        # invoice exists to charge for something. It nearly always means the
+        # price could not be read from the document.
+        #
+        # Treating it as a price variance produces a confident, wrong finding:
+        # "actual 0.00, 100% variance". The system would be reporting an
+        # overcharge that does not exist while hiding a genuine failure.
+        #
+        # Knowing when it does not know is more valuable here than guessing.
+        if inv_price <= 0 and po_price > 0:
+            exceptions.append(_exception(
+                "EXTRACTION_FAILURE", "HIGH", inv.description,
+                f"a unit price (PO shows {po_price:,.2f})",
+                "no price could be read from the invoice",
+                Decimal(0), 0.0))
+            continue
+
         # RULE 3 - price variance
         if po_price > 0:
             diff = inv_price - po_price
@@ -69,8 +89,8 @@ def evaluate(triplets: list[dict]) -> list[dict]:
                 over_pct = pct > _d(settings.price_tolerance_pct)
                 over_abs = amount > _d(settings.absolute_tolerance_amount)
 
-                # BOTH must be breached. A 5% rise on a 100-rupee item
-                # is not worth a human's time.
+                # BOTH must be breached. A 5% rise on a 100-rupee item is
+                # 5 rupees - not worth a reviewer's attention.
                 if over_pct and over_abs:
                     exceptions.append(_exception(
                         "PRICE_VARIANCE",
@@ -97,11 +117,15 @@ def summarize(exceptions: list[dict]) -> dict:
     """Overall verdict for a match run."""
     total = sum(e["variance_amount"] for e in exceptions)
     high = [e for e in exceptions if e["severity"] == "HIGH"]
+    needs_verification = [
+        e for e in exceptions if e["exception_type"] == "EXTRACTION_FAILURE"
+    ]
 
     return {
         "status": "MATCHED" if not exceptions else "EXCEPTION",
         "exception_count": len(exceptions),
         "high_severity_count": len(high),
+        "extraction_failures": len(needs_verification),
         "total_variance": round(total, 2),
         "auto_approve": len(exceptions) == 0,
     }
